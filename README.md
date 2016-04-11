@@ -41,34 +41,34 @@ one for each input file, in this format:
     664371495 ERR
     86110??36 ILL
 
-ie the file has one account number per row. If some characters are illegible, they are replaced by a ?.
+i.e. the file has one account number per row. If some characters are illegible, they are replaced by a `?`.
 In the case of a wrong checksum, or illegible number, this is noted in a second column indicating status.
 
 ### User Story 4
 
-It turns out that often when a number comes back as ERR or ILL it is because the scanner has failed to pick up
+It turns out that often when a number comes back as `ERR` or `ILL` it is because the scanner has failed to pick up
 on one pipe or underscore for one of the figures. For example
 
         _  _  _  _  _  _     _
     |_||_|| || ||_   |  |  ||_
       | _||_||_||_|  |  |  | _|
 
-The 9 could be an 8 if the scanner had missed one |. Or the 0 could be an 8. Or the 1 could be a 7.
-The 5 could be a 9 or 6. So your next task is to look at numbers that have come back as ERR or ILL,
+The 9 could be an 8 if the scanner had missed one `|`. Or the 0 could be an 8. Or the 1 could be a 7.
+The 5 could be a 9 or 6. So your next task is to look at numbers that have come back as `ERR` or `ILL`,
 and try to guess what they should be, by adding or removing just one pipe or underscore. If there
 is only one possible number with a valid checksum, then use that. If there are several options, the
-status should be AMB. If you still can't work out what it should be, the status should be reported ILL.
+status should be `AMB`. If you still can't work out what it should be, the status should be reported `ILL`.
 
 ### Clues
 
 I recommend finding a way to write out 3x3 cells on 3 lines in your code, so they form an identifiable digits.
-Even if your code actually doesn't represent them like that internally. I'd much rather read
+Even if your code actually doesn't represent them like that internally. I'd much rather read something like
 
     "   " +
     "|_|" +
     "  |"
 
-than
+instead of
 
     "   |_|  |"
 
@@ -77,17 +77,13 @@ anyday.
 
 ### Some gotchas to avoid:
 
-- be very careful to read the definition of checksum correctly. It is not a simple dot product, the digits are reversed from what you expect.
-- The spec does not list all the possible alternatives for valid digits when one pipe or underscore has been removed or added
-- don't forget to try to work out what a ? should have been by adding or removing one pipe or underscore.
+- Be very careful to read the definition of checksum correctly. It is not a simple dot product, the digits are
+  reversed from what you might expect.
+- The spec does not list all the possible alternatives for valid digits when one pipe or underscore has been
+  removed or added.
+- Don't forget to try to work out what a `?` should have been by adding or removing one pipe or underscore.
 
 ### Suggested Test Cases
-
-If you want to just copy and paste these test cases into your editor,
-I suggest first clicking "edit this page" so you can see the source.
-Then you can be sure to copy across all the whitespace necessary. Just don't save any changes by mistake.
-
-----
 
 Use Case 1
 
@@ -181,7 +177,7 @@ Use Case 3
 
 ----
 
-Use case 4
+Use Case 4
 
 
       |  |  |  |  |  |  |  |  |

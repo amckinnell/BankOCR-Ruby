@@ -1,10 +1,7 @@
 source "https://rubygems.org"
 
-# Useful for String.strip_heredoc in examples.
-gem "activesupport", "~> 4.2.5"
-
-gem "mutant-rspec", "0.8.8"
-gem "rake", "11.1.2"
-gem "rspec", "3.4.0"
-gem "rubocop", "0.40.0"
-gem "simplecov", "0.11.2"
+gem "mutant-rspec", "0.8.11"
+gem "rake", "12.0.0"
+gem "rspec", "3.5.0"
+gem "rubocop", "0.48.1"
+gem "simplecov", "0.14.1"

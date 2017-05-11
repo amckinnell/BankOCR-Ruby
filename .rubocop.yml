@@ -1,5 +1,5 @@
 AllCops:
-  TargetRubyVersion: 2.2
+  TargetRubyVersion: 2.3
 
   Exclude:
       - "bin/**/*"
@@ -35,4 +35,11 @@ Style/ModuleFunction:
 
 # We are going to skip top-level class documentation for katas.
 Style/Documentation:
+  Enabled: false
+
+# We are going to use basic array literals..
+Style/WordArray:
+  Enabled: false
+
+Style/SymbolArray:
   Enabled: false
